@@ -1,6 +1,6 @@
-<%- include("./partials/head.ejs")   %>
+<%- include("../partials/head.ejs")   %>
         <link href="/css/product.css" rel="stylesheet" />
-<%- include("./partials/navbar.ejs") %>
+<%- include("../partials/navbar.ejs") %>
 
         <main>  
             <% if(products.length>0) { %>
@@ -11,13 +11,14 @@
                         <h1 class="product__title"><%= product.title %></h1>
                     </header>
                     <div class="card__image">
-                        <img src="https://cdn.pixabay.com/photo/2016/03/31/20/51/book-1296045_960_720.png" alt="A Book">
+                        <img src="<%= product.imageUrl %>" alt="A Book">
                     </div>
                     <div class="card__content">
-                        <h2 class="product__price">$19.99</h2>
-                        <p class="product__description">A very interesting book about so many even more interesting things!</p>
+                        <h2 class="product__price"><%= product.price %></h2>
+                        <p class="product__description"><%= product.description %></p>
                     </div>
                     <div class="card__actions">
+                        <a href="/products/<%= product.id %>" class="btn">Detail</a>                        
                         <button class="btn">Add to Cart</button>
                     </div>
                 </article>   
@@ -29,4 +30,4 @@
             <% } %>
     </main>
 
-    <%- include("./partials/footer.ejs") %>
+    <%- include("../partials/footer.ejs") %>

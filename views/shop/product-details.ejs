@@ -1,0 +1,17 @@
+<%- include("../partials/head.ejs")   %>
+      
+<%- include("../partials/navbar.ejs") %>
+        <main class="centered">
+           <h1><%= console.log(product.title) %></h1>
+           <hr>
+           <div>
+                <img src="<%= product.imageUrl %>" alt="<% product.title %>" />
+           </div>
+           <h2><%= product.price %></h2>
+           <p><%= product.description %></p>
+           <form action="/cart" method="POST">
+                <button type="submit" class="btn">Add to Cart</button>
+                <input type="hidden" name="productId" value="<%= product.id %>" />
+           </form>
+        </main>
+<%- include("../partials/footer.ejs") %>
