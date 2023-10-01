@@ -18,9 +18,8 @@
                     <p class="product__description"><%= product.description %></p>
                 </div>
                 <div class="card__actions">
-                    <a href="/products/<%= product.id %>" class="edit-btn">Edit</a>
-                    <a href="/products/<%= product.id %>" class="edit-btn">Delete</a>                        
-                   
+                    <a href="/admin/editProduct/<%= product.id %>" class="edit-btn">Edit</a>
+                    <a href="/admin/deleteProduct/<%= product.id %>" class="edit-btn">Delete</a>                        
                 </div>
             </article>   
             <% } %>
